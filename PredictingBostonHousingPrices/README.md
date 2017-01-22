@@ -9,4 +9,13 @@ The dataset for this project originates from the UCI Machine Learning Repository
 	•	The feature 'MEDV' has been multiplicatively scaled to account for 35 years of market inflation.
 Run the code cell below to load the Boston housing dataset, along with a few of the necessary Python libraries required for this project. You will know the dataset loaded successfully if the size of the dataset is reported.
 ｀｀｀
+###Question 1 - Feature Observation¶
+As a reminder, we are using three features from the Boston housing dataset: 'RM', 'LSTAT', and 'PTRATIO'. For each data point (neighborhood):
+	•	'RM' is the average number of rooms among homes in the neighborhood.
+	•	'LSTAT' is the percentage of homeowners in the neighborhood considered "lower class" (working poor).
+	•	'PTRATIO' is the ratio of students to teachers in primary and secondary schools in the neighborhood.
+Using your intuition, for each of the three features above, do you think that an increase in the value of that feature would lead to an increase in the value of 'MEDV' or a decrease in the value of 'MEDV'? Justify your answer for each.
+Hint: Would you expect a home that has an 'RM' value of 6 be worth more or less than a home that has an 'RM' value of 7?
+
+Answer:
 
