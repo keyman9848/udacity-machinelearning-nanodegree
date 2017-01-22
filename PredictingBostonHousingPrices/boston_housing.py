@@ -156,6 +156,7 @@ def model_complexity_graph(max_depth, train_err, test_err):
     pl.show()
 
 
+# 训练模型并预测房价
 def fit_predict_model(city_data):
     """Find and tune the optimal model. Make a prediction on housing data."""
 

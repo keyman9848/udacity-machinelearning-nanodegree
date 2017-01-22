@@ -1,21 +1,14 @@
-### GETTING STARTED
-用数据训练一个模型来预测波士顿的房价，数据已经经过了清洗；
-｀｀｀
-In this project, you will evaluate the performance and predictive power of a model that has been trained and tested on data collected from homes in suburbs of Boston, Massachusetts. A model trained on this data that is seen as a good fit could then be used to make certain predictions about a home — in particular, its monetary value. This model would prove to be invaluable for someone like a real estate agent who could make use of such information on a daily basis.
-The dataset for this project originates from the UCI Machine Learning Repository. The Boston housing data was collected in 1978 and each of the 506 entries represent aggregated data about 14 features for homes from various suburbs in Boston, Massachusetts. For the purposes of this project, the following preprocessing steps have been made to the dataset:
-	•	16 data points have an 'MEDV' value of 50.0. These data points likely contain missing or censored values and have been removed.
-	•	1 data point has an 'RM' value of 8.78. This data point can be considered an outlier and has been removed.
-	•	The features 'RM', 'LSTAT', 'PTRATIO', and 'MEDV' are essential. The remaining non-relevant features have been excluded.
-	•	The feature 'MEDV' has been multiplicatively scaled to account for 35 years of market inflation.
-Run the code cell below to load the Boston housing dataset, along with a few of the necessary Python libraries required for this project. You will know the dataset loaded successfully if the size of the dataset is reported.
-｀｀｀
-###Question 1 - Feature Observation¶
-As a reminder, we are using three features from the Boston housing dataset: 'RM', 'LSTAT', and 'PTRATIO'. For each data point (neighborhood):
-	•	'RM' is the average number of rooms among homes in the neighborhood.
-	•	'LSTAT' is the percentage of homeowners in the neighborhood considered "lower class" (working poor).
-	•	'PTRATIO' is the ratio of students to teachers in primary and secondary schools in the neighborhood.
-Using your intuition, for each of the three features above, do you think that an increase in the value of that feature would lead to an increase in the value of 'MEDV' or a decrease in the value of 'MEDV'? Justify your answer for each.
-Hint: Would you expect a home that has an 'RM' value of 6 be worth more or less than a home that has an 'RM' value of 7?
-
-Answer:
-
+预测波士顿房价。
+用以往的房价数据来训练模型预测未来的房价。
+1.加载csv数据；
+2.探索数据，察看数据的最小值、最大值、均值、方差等统计量；
+3.定义一个表现预测率和错误率的图，判断准确率；
+4.洗乱数据并把数据分为训练数据和测试数据，使用Cross-Validation技术；
+5.分析数据的表现，用不同的参数测试模型并且用前面定义的图展示；
+6.评估模型的表现，使用Grid Search的到最优的模型；
+7.预测房价；
+8.着眼现实，看这个模型是否能应用到现实世界，
+ 第一，以前收集的数据是否对现在有用，
+ 第二，是否有充足的特征能描述这所房子，
+ 第三，这个模型是否足够健壮能够预测所有类型的房屋，
+ 第四，用郊区数据训练的模型能否应用到农村。
