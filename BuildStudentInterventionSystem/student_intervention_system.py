@@ -34,9 +34,16 @@ y_all = student_data[target_col]  # corresponding targets/labels
 print "\nFeature values:-"
 print X_all.head()  # print the first 5 rows
 
+# 清洗数据,如有yes/no就用1/0代替,如果缺失就删除或者用什么值代替
 # Preprocess Feature Columns
 # As you can see, there are several non-numeric columns that need to be converted! Many of them are simply yes/no, e.g.
 # internet. These can be reasonably converted into 1/0 (binary) values.
+
+# Other columns, like Mjob and Fjob, have more than two values, and are known as categorical variables.
+# The recommended way to handle such a column is to create as many columns as possible values (e.g. Fjob_teacher,
+# Fjob_other, Fjob_services, etc.), and assign a 1 to one of them and 0 to all others.
+# These generated columns are sometimes called dummy variables, and we will use the pandas.get_dummies() function
+# to perform this transformation.
 def preprocess_features(X):
     ''' Preprocesses the student data and converts non-numeric binary variables into
         binary (0/1) variables. Converts categorical variables into dummy variables. '''
@@ -161,6 +168,8 @@ parameters = {'gamma': [1e-2, 1e-3, 1e-4, 1e-5, 1e-6],
               'C': [1, 10, 100, 200, 300, 400, 500, 600, 700]
              }
 
+
+# 洗牌,混合
 cv = StratifiedShuffleSplit(y_all, random_state=42)
 
 gs = GridSearchCV(SVC(), parameters, cv=cv, scoring='f1_weighted')
